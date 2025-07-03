@@ -11,4 +11,4 @@ from config import BOT_TOKEN
 # Используемые библиотеки для работы бота
 > python-dotenv    # для безопасного использования пременных в проекте
 > pyTelegramBotAPI # фреймвок для создания асинхронного tg бота
-
+> aiohttp
