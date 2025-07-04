@@ -9,6 +9,8 @@ Description for RubikJanBota
 from config import BOT_TOKEN
 
 # Используемые библиотеки для работы бота
-> python-dotenv    # для безопасного использования пременных в проекте
-> pyTelegramBotAPI # фреймвок для создания асинхронного tg бота
-> aiohttp
+- python-dotenv      # для безопасного использования пременных в проекте
+- pyTelegramBotAPI   # фреймвок для создания асинхронного tg бота
+- aiohttp
+- SQLAlchemy==2.0.41 # для создания таблиц в БД
+- alembic==1.16.2    # для миграции таблиц в базу данных
