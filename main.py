@@ -12,7 +12,7 @@ bot = AsyncTeleBot(BOT_TOKEN)
 # Handle '/start' and '/help'
 @bot.message_handler(commands=['help', 'start'])
 async def send_welcome(message):
-    text = 'Привет, Лиана.\nJust write me something and I will repeat it!'
+    text = 'Привет, Камиль.\nJust write me something and I will repeat it!'
     await bot.reply_to(message, text)
 
 
