@@ -1,8 +1,10 @@
-from sqlalchemy import Column, Integer, String, Boolean, DateTime, BigInteger
+import os
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, BigInteger, create_engine
 from sqlalchemy.ext.declarative import declarative_base
-from datetime import datetime
+from datetime import datetime, UTC
 
 Base = declarative_base()
+
 
 class User(Base):
     __tablename__ = 'rubikjanbot_users'
@@ -18,3 +20,6 @@ class User(Base):
 
     def __repr__(self):
         return f"<User(id={self.telegram_id}, username='{self.username}')>"
+    
+engine = create_engine('sqlite:///rubikjanbot.db', echo=True)
+Base.metadata.create_all(engine)
