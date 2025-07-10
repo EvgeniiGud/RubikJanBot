@@ -21,5 +21,6 @@ class User(Base):
     def __repr__(self):
         return f"<User(id={self.telegram_id}, username='{self.username}')>"
     
-engine = create_engine('sqlite:///rubikjanbot.db', echo=True)
-Base.metadata.create_all(engine)
+engine = create_engine(
+    os.getenv("RUBIKJANBOT_DATABASE_URL", 'sqlite:///rubikjanbot.db'),
+    echo=True)
