@@ -1,4 +1,4 @@
-from main import bot
+from src.common import bot
 
 # Handle '/rules'
 @bot.message_handler(commands=['rules'])
