@@ -3,7 +3,8 @@ Description for RubikJanBota
 
 ### Все зависимости находяться в файле requirements.txt
 > Что бы автоматически установить все зависмости надо в терминале использовать команду
-- pip install -r requirements.txt 
+- pip install -r dev_requirements.txt  # на локальном для разработки
+- pip install -r prod_requirements.txt  # на основном сервере
 
 ### Безопасное использование конфигурационных переменых в проекте (например BOT_TOKEN)
 from config import BOT_TOKEN
