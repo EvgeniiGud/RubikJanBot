@@ -10,8 +10,9 @@ Description for RubikJanBota
 from config import BOT_TOKEN
 
 #### Работа с alembic
-- alembic revision --autogenerate -m "Added users table" # не понял пока 
+- alembic revision --autogenerate -m "Added users table" # Данная команда создает правила миграции 
 - alembic upgrade head # применение миграции
+
 
 ### Используемые библиотеки для работы бота
 #### base_requirements

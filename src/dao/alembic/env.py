@@ -36,7 +36,7 @@ def run_migrations_offline() -> None:
     script output.
 
     """
-    url = os.getenv("RUBIKJANBOT_DATABASE_URL", 'sqlite:///rubikjanbot.db')
+    url = os.getenv("RUBIKJANBOT_DATABASE_URL", "sqlite:///rubikjanbot.db")
     context.configure(
         url=url,
         target_metadata=target_metadata,
@@ -59,7 +59,9 @@ def run_migrations_online() -> None:
 
     with connectable.connect() as connection:
         context.configure(
-            connection=connection, target_metadata=target_metadata
+            connection=connection,
+            target_metadata=target_metadata,
+            render_as_batch=True,
         )
 
         with context.begin_transaction():
