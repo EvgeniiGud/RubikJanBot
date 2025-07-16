@@ -21,5 +21,8 @@ __pycache__/
 # Файлы зависимостей (можно оставить, если используешь requirements.txt)
 *.egg-info/
 
+# Для postgres
+database.env
+
 # исключаем локальную базу данных sqlite
 rubikjanbot.db

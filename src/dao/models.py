@@ -1,9 +1,13 @@
 import os
-from sqlalchemy import Column, Integer, String, Boolean, DateTime, BigInteger, create_engine
+from sqlalchemy import Column, String, Boolean, DateTime, BigInteger, create_engine
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime, UTC
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 Base = declarative_base()
 
@@ -23,13 +27,18 @@ class User(Base):
     def __repr__(self):
         return f"<User(id={self.telegram_id}, username='{self.username}')>"
     
+
+
 engine = create_engine(
-    os.getenv("RUBIKJANBOT_DATABASE_URL", 'sqlite:///rubikjanbot.db'),
+    os.getenv("RUBIKJANBOT_DATABASE_URL", "sqlite:///rubikjanbot.db"),
     echo=True)
 
-async_engine = create_async_engine (
-    os.getenv("RUBIKJANBOT_DATABASE_URL", 'sqlite+aiosqlite:///rubikjanbot.db'),
-    echo=True
-)
+AsyncSessionLocal = None
 
-AsyncSessionLocal = sessionmaker (async_engine, class_=AsyncSession, expire_on_commit=False)
+
+if SERVBOT_ASYNC_DATABASE_URL := os.getenv("RUBIKJANBOT_ASYNC_DATABASE_URL"):
+    async_engine = create_async_engine(
+        os.getenv("RUBIKJANBOT_ASYNC_DATABASE_URL", "sqlite+aiosqlite:///rubikjanbot.db"),
+        echo=True
+    )
+    AsyncSessionLocal = sessionmaker (async_engine, class_=AsyncSession, expire_on_commit=False) 
