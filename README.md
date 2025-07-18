@@ -23,8 +23,8 @@ from config import BOT_TOKEN
 - alembic==1.16.2         # для миграции таблиц в базу данных
    
 #### prod_requirements
-- psycopg-binary==2.9.10  # для работы с постгри
-- aiopg==1.4.0            # асинхронная работа с постгри
+- psycopg-binary==2.9.10  # для работы с postgres
+- asyncpg==0.30.0          # асинхронная работа с postgres
 
 #### dev_requirements
 - aiosqlite==0.21.0       # асинхронный клиент для баз данных sqlite на локальной машине
