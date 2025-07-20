@@ -36,7 +36,7 @@ engine = create_engine(
 AsyncSessionLocal = None
 
 
-if SERVBOT_ASYNC_DATABASE_URL := os.getenv("RUBIKJANBOT_ASYNC_DATABASE_URL"):
+if RUBIKJANBOT_ASYNC_DATABASE_URL := os.getenv("RUBIKJANBOT_ASYNC_DATABASE_URL"):
     async_engine = create_async_engine(
         os.getenv("RUBIKJANBOT_ASYNC_DATABASE_URL", "sqlite+aiosqlite:///rubikjanbot.db"),
         echo=True
