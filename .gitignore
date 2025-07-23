@@ -26,3 +26,6 @@ database.env
 
 # исключаем локальную базу данных sqlite
 rubikjanbot.db
+
+# иусключил папку info
+info/
