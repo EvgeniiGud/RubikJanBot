@@ -9,15 +9,19 @@ Description for RubikJanBota
 ### Безопасное использование конфигурационных переменых в проекте (например BOT_TOKEN)
 from config import BOT_TOKEN
 
+
 #### Работа с alembic
 - alembic revision --autogenerate -m "Added users table" # Данная команда создает правила миграции 
 - alembic upgrade head # применение миграции
+
+### Документация
+- https://pytba.readthedocs.io/ru/latest/quick_start.html  # pyTelegramBotAPI
 
 
 ### Используемые библиотеки для работы бота
 #### base_requirements
 - python-dotenv           # для безопасного использования пременных в проекте
-- pyTelegramBotAPI        # фреймвок для создания асинхронного tg бота
+- pyTelegramBotAPI        # фреймвок для создания асинхронного tg бота 
 - aiohttp
 - SQLAlchemy==2.0.41      # для создания таблиц в БД
 - alembic==1.16.2         # для миграции таблиц в базу данных
