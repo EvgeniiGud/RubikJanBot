@@ -14,10 +14,7 @@ async def send_welcome(message):
             )
             session.add(user)
             await session.commit()
-            await bot.reply_to(message, "Добро пожаловать! Вы зарегистрированы.")
+            await bot.reply_to(message, f"Добро пожаловать {user.first_name or 'друг'}! Вы зарегистрированы.")
         else:
             # await bot.reply_to(message, "С возвращением!")
-            await bot.reply_to(
-                message,
-                f"С возвращением, {user.first_name or 'друг'}!"
-            )
+            await bot.reply_to(message, f"С возвращением, {user.first_name or 'друг'}!")
